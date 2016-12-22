@@ -1,0 +1,19 @@
+{
+  "name": "circle-timer",
+  "version": "0.0.1",
+  "description": "A module that creates circular / radial timers and clocks",
+  "main": "circle-timer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R-V-S/circleTimer.git"
+  },
+  "author": "R.V.S.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R-V-S/circleTimer/issues"
+  },
+  "homepage": "https://github.com/R-V-S/circleTimer#readme"
+}
