@@ -150,3 +150,5 @@ class CircleTimer {
     this.running = false
   }
 }
+
+module.exports = CircleTimer
