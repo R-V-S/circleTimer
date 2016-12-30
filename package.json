@@ -1,6 +1,6 @@
 {
   "name": "circle-timer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A module that creates circular / radial timers and clocks",
   "main": "circle-timer.js",
   "scripts": {
