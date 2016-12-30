@@ -21,9 +21,9 @@ class CircleTimer {
     this.element = document.createElement('section')
     this.element.classList.add(this.config.timerClass)
     this.element.style.width = this.element.style.height = (this.config.radius * 2) + this.config.units
-    this.config.rootElement.append(this.element)
-    this.element.append( this.buildBackgroundRing() )
-    this.element.append( this.buildBackgroundRingShadow() )
+    this.config.rootElement.appendChild(this.element)
+    this.element.appendChild( this.buildBackgroundRing() )
+    this.element.appendChild( this.buildBackgroundRingShadow() )
     this.buildTimer()
   }
 
@@ -31,7 +31,7 @@ class CircleTimer {
 
     this.segments = Array.from({length:4}, (_,i) => {
       let segment = this.buildSegment(i)
-      this.element.append(segment)
+      this.element.appendChild(segment)
 
       return segment
     })
@@ -107,8 +107,8 @@ class CircleTimer {
     circleSegment.style.border =
       `${this.config.thickness} ${this.config.style} ${this.config.color}`
 
-    innerOcclusionBox.append(circleSegment)
-    outerOcclusionBox.append(innerOcclusionBox)
+    innerOcclusionBox.appendChild(circleSegment)
+    outerOcclusionBox.appendChild(innerOcclusionBox)
 
     return outerOcclusionBox
   }
