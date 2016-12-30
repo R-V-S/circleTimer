@@ -110,7 +110,7 @@ class CircleTimer {
           ${-translateX}${this.config.units},
           ${-translateY}${this.config.units})`
     circleSegment.style.border =
-      `${this.config.thickness} ${this.config.style} ${this.config.color}`
+      `${this.config.thickness}${this.config.units} ${this.config.style} ${this.config.color}`
 
     innerOcclusionBox.appendChild(circleSegment)
     outerOcclusionBox.appendChild(innerOcclusionBox)

@@ -6,7 +6,7 @@ A JS class for making circular / radial timers and clocks
 Use npm to add the module to your project:
 
 ```sh
-npm install circle-timer
+npm install -S circle-timer
 ```
 
 ## Usage
