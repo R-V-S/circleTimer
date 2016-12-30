@@ -27,55 +27,51 @@ this.circleTimer = new CircleTimer({
 
 Possible settings and their defaults:
 
-*rootElement*
+**rootElement**  
 The DOM element that the circle will be attached to. Defaults to the body tag.
 
-*circleDuration*
+**circleDuration**  
 The number of seconds that the entire circle represents. Defaults to 60.
 
-*timerDuration*
+**timerDuration**  
 The number of seconds that will be counted down. Defaults to 60.
 
-*timerClass*
+**timerClass**  
 An additional class (or classes) that will be added to the circle timer element.
 
-*radius*
+**radius**  
 The radius of the circle. Defaults to 200.
 
-*units*
+**units**  
 The units used for radius and thickness. Defaults to 'px'.
 
-*color*
+**color**  
 The foreground color of the circle's ring. Defaults to 'lightskyblue'.
 
-*backgroundRingColor*
+**backgroundRingColor**  
 The background color of the circle's ring. The color that's visible as the time slips away. Defaults to 'gainsboro' (a light gray).
 
-*backgroundRingShadow*
+**backgroundRingShadow**  
 The inner shadow of the circle's ring. Defaults to 'inset 0 0 5px rgba(0, 0, 0, 0.1)'.
 
-*thickness*
+**thickness**  
 The thickness of the circle's ring. Defaults to 25.
 
-*style*
+**style**  
 The style of the circle's ring. Accepts a valid `border-style` value. Values other than `solid` may result in odd visuals. Defaults to 'solid'.
 
 ## Methods
 
-*startTimer*
-
+**startTimer**  
 Takes no arguments. Starts the clock.
 
-*pauseTimer*
-
+**pauseTimer**  
 Takes no arguments. Pauses the clock.
 
-*resetTimer*
-
+**resetTimer**  
 Takes no arguments. Resets the timer to its initial duration.
 
-*updateTimer*
-
+**updateTimer**  
 Takes a configuration object as its only argument. Allows you to change `circleDuration` and `timerDuration`. Resets the timer.
 
 ## Usage in React
