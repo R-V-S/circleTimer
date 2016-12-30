@@ -1,6 +1,20 @@
 class CircleTimer {
   constructor() {
     const params = arguments[0] || {}
+    this.setConfig(params)
+
+    this.timerDuration = this.config.initialTimerDuration
+    this.config.createdOn = Date.now()
+    this.element = document.createElement('section')
+    this.element.classList.add(this.config.timerClass)
+    this.element.style.width = this.element.style.height = (this.config.radius * 2) + this.config.units
+    this.config.rootElement.appendChild(this.element)
+    this.element.appendChild( this.buildBackgroundRing() )
+    this.element.appendChild( this.buildBackgroundRingShadow() )
+    this.buildTimer()
+  }
+
+  setConfig(params) {
     this.config = {
       rootElement: params.rootElement || params.root || document.getElementsByTagName('body')[0],
       circleDuration: params.circleDuration || params.circleTime || 60,
@@ -13,18 +27,9 @@ class CircleTimer {
       backgroundRingColor: params.backgroundRingColor || 'gainsboro',
       backgroundCircleColor: params.backgroundCircleColor || 'transparent',
       backgroundRingShadow: params.innerShadow || 'inset 0 0 5px rgba(0, 0, 0, 0.1)',
-      thickness: params.thickness || '2vmin',
+      thickness: params.thickness || '25',
       style: params.style || 'solid'
     }
-    this.timerDuration = this.config.initialTimerDuration
-    this.config.createdOn = Date.now()
-    this.element = document.createElement('section')
-    this.element.classList.add(this.config.timerClass)
-    this.element.style.width = this.element.style.height = (this.config.radius * 2) + this.config.units
-    this.config.rootElement.appendChild(this.element)
-    this.element.appendChild( this.buildBackgroundRing() )
-    this.element.appendChild( this.buildBackgroundRingShadow() )
-    this.buildTimer()
   }
 
   buildTimer() {
@@ -42,7 +47,7 @@ class CircleTimer {
     const backgroundRing = document.createElement('div')
     backgroundRing.style.position = 'absolute'
     backgroundRing.style.width = backgroundRing.style.height = (this.config.radius * 2) + this.config.units
-    backgroundRing.style.border = `${this.config.thickness} ${this.config.style} ${this.config.backgroundRingColor}`
+    backgroundRing.style.border = `${this.config.thickness}${this.config.units} ${this.config.style} ${this.config.backgroundRingColor}`
     backgroundRing.style.borderRadius = '50%'
     backgroundRing.style.boxSizing = 'border-box'
     backgroundRing.style.boxShadow = this.config.backgroundRingShadow
@@ -148,6 +153,12 @@ class CircleTimer {
     this._clearSegments()
     this.buildTimer()
     this.running = false
+  }
+
+  updateTimer() {
+    const params = arguments[0] || {}
+    this.setConfig(params)
+    this.resetTimer()
   }
 }
 
