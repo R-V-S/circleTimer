@@ -128,7 +128,7 @@ class CircleTimer {
     for (let segment of this.segments) {
       setTimeout( function() {
         segment.querySelector('.inner.occlusion-box').style.transform = "rotate(-90deg)"
-      }, 1)
+      }, 50)
     }
   }
 
@@ -157,7 +157,7 @@ class CircleTimer {
 
   updateTimer() {
     const params = arguments[0] || {}
-    this.setConfig(params)
+    this.setConfig( Object.assign({}, this.config, params) )
     this.resetTimer()
   }
 }
